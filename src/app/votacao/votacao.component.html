@@ -1,0 +1,46 @@
+<p-panel header="Onde vamos almoçar?">
+
+  <div class="p-grid">
+    <div class="p-col-4">Você é</div>
+    <div class="p-col-8">
+
+      <p-dropdown 
+        [options]="colaboradores" 
+        [(ngModel)]="colaboradorSelecionado" 
+        placeholder="Selecione seu nome" 
+        optionLabel="nome"></p-dropdown>
+
+    </div>
+
+    <div class="p-col-4">E quero almoçar no</div>
+
+    <div class="p-col-8">
+        <p-dropdown 
+        [options]="restaurantes" 
+        [(ngModel)]="restauranteSelecionado" 
+        placeholder="Selecione o local que você deseja almoçar" 
+        optionLabel="nome"></p-dropdown>
+
+    </div>
+
+    <div class="p-col-12">
+
+      <button 
+        pButton type="submit" 
+        label="Votar"
+        icon="pi pi-check" 
+        iconPos="right"
+        (click)="votar()">
+      </button>
+    </div>
+  </div>
+
+  <br>
+
+  <a routerLink="/parcial-votacao" routerLinkActive="active">Parcial da Votação</a>
+
+</p-panel>
+
+<br>
+
+<p-toast></p-toast>
